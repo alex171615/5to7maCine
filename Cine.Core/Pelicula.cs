@@ -6,5 +6,6 @@ namespace Cine.Core
         public string nombre;
         public date fecha;
         public string genero;
+        
     }
 }
