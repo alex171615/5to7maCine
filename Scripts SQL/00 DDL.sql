@@ -31,7 +31,7 @@ create table pelicula
 		nombre VARCHAR(45) NOT NULL,
 		apellido VARCHAR(45) NOT NULL,
 		email VARCHAR(65) NOT NULL,
-		contrasena TINYINT NOT NULL,
+		contrasena CHAR(64) NOT NULL,
 		PRIMARY KEY (idCliente), 
         CONSTRAINT UQ_cliente_email UNIQUE(email)
     );

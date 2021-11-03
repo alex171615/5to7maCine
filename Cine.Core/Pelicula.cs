@@ -4,7 +4,7 @@ namespace Cine.Core
     {
         public int id { get; set; }
         public string nombre;
-        public date fecha;
+        public data fecha;
         public string genero;
         
     }
