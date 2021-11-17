@@ -26,6 +26,7 @@ values (unIdProyeccion, unaFechaHora, unIdPelicula, unIdSala, unIdCliente );
 end$$
 
 
+
 /*Se pide hacer el SP ‘registrarCliente’ que reciba los datos del cliente. Es importante guardar encriptada la contraseña del cliente usando SHA256.*/
 
 DELIMITER $$
@@ -35,7 +36,7 @@ CREATE PROCEDURE registraCliente (unIdCliente SMALLINT UNSIGNED, unNombre VARCHA
 BEGIN 
 
 INSERT INTO cliente (idCliente, nombre, apellido, email, contrasena)
-VALUES (unIdClient, unNombre, unApellido, unEmail, sha2(sha,256));	
+VALUES (unIdClient, unNombre, unApellido, unEmail, sha2(unaContrasena,256));	
 END$$
 
 
@@ -70,17 +71,15 @@ end $$
 
 delimiter $$
 
-create function recaudacionPara (unIdPelicula SMALLINT, unInicio date, unFin date )returns int
-
+create function recaudacionPara (unIdPelicula SMALLINT, unInicio date, unFin date )returns DECIMAL(6,2)
 
 begin 
 
-declare retornarRecaudacion int;
-select idPelicula into retornarRecaudacion
-from entrada
-where idEntrada = idEntrada
-between unInicio and unFin;
+declare retornarRecaudacion DECIMAL(6,2);
+select sum(valor) into retornarRecaudacion
+from pelicula
+where idPelicula = unIdPelicula
+and fecha between unInicio and unFin;
 return retornarRecaudacion;
+ 
 end $$
-
-

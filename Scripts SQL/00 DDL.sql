@@ -59,7 +59,7 @@ create table entrada
 		idEntrada SMALLINT NOT NULL,
 		 valor decimal (6,2) NOT NULL,
 		 email VARCHAR (65) NOT NULL,
-		 butaca smallint NOT NULL,
+		 numeroEntrada smallint NOT NULL,
 		 idProyeccion SMALLINT UNSIGNED NOT NULL,
          idCliente SMALLINT UNSIGNED NOT NULL,
 		 PRIMARY KEY (idEntrada), 
