@@ -1,4 +1,3 @@
-
 /*Se pide hacer los SP para dar de alta todas las entidades (menos Entrada y Cliente) con el prefijo ‘alta’.*/
 delimiter $$
 
@@ -26,7 +25,6 @@ values (unIdProyeccion, unaFechaHora, unIdPelicula, unIdSala, unIdCliente );
 end$$
 
 
-
 /*Se pide hacer el SP ‘registrarCliente’ que reciba los datos del cliente. Es importante guardar encriptada la contraseña del cliente usando SHA256.*/
 
 DELIMITER $$
@@ -36,7 +34,7 @@ CREATE PROCEDURE registraCliente (unIdCliente SMALLINT UNSIGNED, unNombre VARCHA
 BEGIN 
 
 INSERT INTO cliente (idCliente, nombre, apellido, email, contrasena)
-VALUES (unIdClient, unNombre, unApellido, unEmail, sha2(unaContrasena,256));	
+VALUES (unIdClient, unNombre, unApellido, unEmail, sha2(sha,256));	
 END$$
 
 
@@ -56,14 +54,15 @@ end $$
 /*Realizar el SP ‘top10’ que reciba por parámetro 2 fechas, el SP tiene que devolver identificador y nombre de la película y la cantidad de entradas vendidas para la misma entre las 2 fechas. Ordenar por cantidad de entradas de mayor a menor.*/
 
 delimiter $$
-create procedure top10 (unIdPelicula SMALLINT, unNombre VARCHAR (45), unEntrada SMALLINT , unInicio date, unFin date)
+create procedure top10 (unInicio date, unFin date) 
 
 begin 
 
-select idPelicula, nombre,idEntrada
-from entrada
-where idEntrada = IdEntrada
-and count(idEntrada) between unInicio and unFin
+select idPelicula, nombre,count(numeroEntrada)
+from entrada E
+join proyeccion on E.proyeccion = P.pelicula
+group by idPelicula
+and fecha between unInicio and unFin
 order by idEntrada DESC;
 end $$
 
@@ -75,11 +74,13 @@ create function recaudacionPara (unIdPelicula SMALLINT, unInicio date, unFin dat
 
 begin 
 
-declare retornarRecaudacion DECIMAL(6,2);
-select sum(valor) into retornarRecaudacion
-from pelicula
-where idPelicula = unIdPelicula
-and fecha between unInicio and unFin;
-return retornarRecaudacion;
+ declare retornarRecaudacion DECIMAL(6,2);
+ select sum(valor) into retornarRecaudacion
+ from pelicula
+ where idPelicula = unIdPelicula
+ and fecha between unInicio and unFin;
+ return retornarRecaudacion;
  
-end $$
+ end $$
+
+ 
