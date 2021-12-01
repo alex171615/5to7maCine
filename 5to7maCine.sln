@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cine.Core", "Cine.Core\Cine
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cine.AdoMySQL", "Cine.AdoMySQL\Cine.AdoMySQL.csproj", "{15F41ADA-CC1B-40B8-9535-FCED327BCD84}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Admin.Consola", "Admin.Consola\Admin.Consola.csproj", "{0EA65C55-7028-4777-9321-58F2F1FA1BDC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -44,5 +46,17 @@ Global
 		{15F41ADA-CC1B-40B8-9535-FCED327BCD84}.Release|x64.Build.0 = Release|Any CPU
 		{15F41ADA-CC1B-40B8-9535-FCED327BCD84}.Release|x86.ActiveCfg = Release|Any CPU
 		{15F41ADA-CC1B-40B8-9535-FCED327BCD84}.Release|x86.Build.0 = Release|Any CPU
+		{0EA65C55-7028-4777-9321-58F2F1FA1BDC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0EA65C55-7028-4777-9321-58F2F1FA1BDC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0EA65C55-7028-4777-9321-58F2F1FA1BDC}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{0EA65C55-7028-4777-9321-58F2F1FA1BDC}.Debug|x64.Build.0 = Debug|Any CPU
+		{0EA65C55-7028-4777-9321-58F2F1FA1BDC}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{0EA65C55-7028-4777-9321-58F2F1FA1BDC}.Debug|x86.Build.0 = Debug|Any CPU
+		{0EA65C55-7028-4777-9321-58F2F1FA1BDC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0EA65C55-7028-4777-9321-58F2F1FA1BDC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0EA65C55-7028-4777-9321-58F2F1FA1BDC}.Release|x64.ActiveCfg = Release|Any CPU
+		{0EA65C55-7028-4777-9321-58F2F1FA1BDC}.Release|x64.Build.0 = Release|Any CPU
+		{0EA65C55-7028-4777-9321-58F2F1FA1BDC}.Release|x86.ActiveCfg = Release|Any CPU
+		{0EA65C55-7028-4777-9321-58F2F1FA1BDC}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
