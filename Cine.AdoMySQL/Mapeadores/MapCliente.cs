@@ -8,12 +8,12 @@ namespace Cine.AdoMySQL.Mapeadores
 {
     public class MapCliente: Mapeador<Cliente>
     {
-     public MapRubro(AdoAGBD ado):base(ado)
+     public MapCliente(AdoAGBD ado):base(ado)
         {
             Tabla = "Cliente";
         }
-        public override Rubro ObjetoDesdeFila(DataRow fila)
-            => new Rubro()
+        public override Cliente ObjetoDesdeFila(DataRow fila)
+            => new Cliente()
             {
                 Id = Convert.ToByte(fila["idCliente"]),
                 Nombre = fila["cliente"].ToString()

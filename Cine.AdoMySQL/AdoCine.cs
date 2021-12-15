@@ -8,20 +8,20 @@ namespace Cine.AdoMySQL
     {
         public AdoAGBD Ado { get; set; }
         public MapCliente MapCliente { get; set; }
-        public MapEntrada MapEntrada { get; set; }
+        public MapPelicula MapPelicula { get; set; }
         public AdoCine(AdoAGBD ado)
         {
             Ado = ado;
             MapCliente = new MapCliente(Ado);
-            MapEntrada = new MapEntrada(MapCliente);
+            MapPelicula = new MapPelicula(MapPelicula);
         }
         public void AltaCliente(Cliente cliente) => MapCliente.AltaCliente(cliente);
         public List<Cliente> ObtenerClientes() => MapCliente.ObtenerClientes();
 
-        public void AltaEntrada(Entrada entrada) => MapEntrada.AltaEntrada(entrada);
-        public List<Entrada> obtenerEntradas() => MapEntrada.obtenerEntradas();
+        public void AltaEntrada(Pelicula pelicula) => MapPelicula.AltaPelicula(pelicula);
+        public List<pelicula> obtenerEntradas() => MapPelicula.ObtenerPeliculas();
 
-        var adoAGBD = FactoryAdoAGBD.GetAdoMySQL("appSettings.json", "test");
+        
         
 
     }

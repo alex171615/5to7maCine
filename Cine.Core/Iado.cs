@@ -6,10 +6,10 @@ namespace Cine.Core.Ado
     public interface IAdo
     {
         //Acciones para la entidad entrada
-        void AltaEntrada(Entrada entrada);
-        List<Entrada> ObtenerRubros();
+        void AltaPelicula(Pelicula pelicula);
+        List<Pelicula> ObtenerPeliculas();
 
         void AltaCliente(Cliente cliente);
-        List<Cliente> ObtenerProductos();
+        List<Cliente> ObtenerClientes();
     }
 }
